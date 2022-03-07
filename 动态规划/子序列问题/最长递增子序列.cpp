@@ -1,0 +1,47 @@
+/*
+leetcode 300 最长递增子序列 
+https://leetcode-cn.com/problems/longest-increasing-subsequence/
+
+给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+
+子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。
+例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+
+*/
+
+#include<iostream>
+#include<vector>
+
+/*
+动态规划思路 : 维持一个长度为nums.size()的 vector<int> dp
+
+确定状态 : dp[i] 表示以nums[i]结尾的最长严格递增子序列的长度
+
+初始化 : 所有的dp[i] 都初始化为1 因为初始状态 以自己为结尾的最长递增子序列就为自己 length=1
+
+状态转移 : 遍历nums[0:i] 找一个j 满足nums[i]>nums[j] && dp[j]+1 为max(dp[i]) 
+
+
+*/
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int>dp(nums.size(),1);
+        int res=1;
+        for(int i=1;i<nums.size();i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                //找到最大的dp[i]
+                if(nums[i]>nums[j]&&dp[j]+1>dp[i])
+                {
+                    dp[i] = dp[j]+1;
+                }
+            }
+            //找到最大的res
+            if(dp[i]>res)
+              res = dp[i];
+        }
+        return res;
+    }
+};

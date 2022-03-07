@@ -1,0 +1,70 @@
+/*
+leetcode 72 编辑距离 
+https://leetcode-cn.com/problems/edit-distance/
+
+给你两个单词 word1 和 word2， 请返回将 word1 转换成 word2 所使用的最少操作数。
+你可以对一个单词进行如下三种操作：
+* 插入一个字符
+* 删除一个字符
+* 替换一个字符
+
+*/
+#include<iostream>
+#include<vector>
+
+
+class Solution {
+public:
+    /*
+    二维动态规划的思想:维持一个(word1.size()+1,word2.size()+1)的矩阵
+
+    矩阵如下所示，首先边界条件好确定 [0][1] 这个位置就表示从"" -> a 所需要的操作数，以此类推
+    dp[i][j]就表示从s1[0:i] -> s2[0:j] 所需要的操作数
+    也就分为两种情况：
+       1）当s1[i]的字符 等于 s2[j]的字符，那由s1[0:i]->s2[0:j] 就无须任何操作也就等价于 s1[0:i-1]-> s2[0:j-1]  这里需要理解一下
+       2) 当s1[i]的字符 不等于 s2[j]的字符 ,那么就由三种操作中的又小操作+1
+          即s1[0:i] ->s1[0:j] = min(s1[0:i-1]->s1[0:j]  ,  s1[0:i-1]->s2[0:j-1],  s1[0:i]-> s2[0:j-1]  )+1
+            如ra ->app 时 s1[0:i-1]->s1[0:j] 表示从r -> app 的操作数，再增加一个ra删除a的操作就行了
+                         s1[0:i-1]->s2[0:j-1] 表示从r -> ap 的操作数，再增加一个a替换为p的操作就行了
+                         s1[0:i]-> s2[0:j-1]  表示从ra -> ap 的操作数，再增加一个插入p的操作就行了
+    
+    s1/s2   ""   a    ap    app   appl
+    ""      0    1     2     3      4
+    r       1     
+    ra      2     if(s1[i]==s2[j]) dp[i][j] =dp[i-1][j-1]
+    rab     3     else   dp[i][j] = min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]) +1
+    rabd    4
+    
+    */
+    int minDistance(string word1, string word2) {
+       vector<vector<int>>dp(word1.size()+1,vector<int>(word2.size()+1,0));
+       //处理边界情况
+       for(int i=1;i<=word2.size();i++)
+       {
+           dp[0][i]=i;
+       }
+       for(int i=1;i<=word1.size();i++)
+       {
+           dp[i][0]=i;
+       }
+
+       for(int i=1;i<=word1.size();i++)
+       {
+           for(int j=1;j<=word2.size();j++)
+           {
+               //状态转移条件
+               if(word1[i-1]==word2[j-1])
+                  dp[i][j]=dp[i-1][j-1];
+                else
+                {
+                    int tmp=min(dp[i-1][j],dp[i-1][j-1]);
+                    dp[i][j] =min(tmp,dp[i][j-1])+1; 
+                }
+               
+           }
+       }
+       //返回最终结果
+       return dp[word1.size()][word2.size()];
+
+    }
+};
