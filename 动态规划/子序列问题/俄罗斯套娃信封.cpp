@@ -1,0 +1,58 @@
+/*
+leetcode 354 俄罗斯套娃信封问题
+给你一个二维整数数组 envelopes ，其中 envelopes[i] = [wi, hi] ，表示第 i 个信封的宽度和高度。
+
+当另一个信封的宽度和高度都比这个信封大的时候，这个信封就可以放进另一个信封里，如同俄罗斯套娃一样。
+
+请计算 最多能有多少个 信封能组成一组“俄罗斯套娃”信封（即可以把一个信封放到另一个信封里面）。
+
+注意：不允许旋转信封。
+
+
+思路: 
+问题做一个转换，实际上就是求在这一堆信封中找一组最长的“递增”的信封组
+所以就将这样一个二维的问题转换为一维求最长“子数组”问题 ，注意是"子数组",但不是“子序列”
+子序列要求的是元素的相对位置顺序是不改变，而“子数组” 的相对顺序是可以发生改变的
+
+那么要求递增子数组，就需要先对原数组排个序，但因为有两个数据 [w,h] 排序时就需要有点讲究
+
+整体思路：
+   对w这个纬度进行升序排序，保证w是一个升序的状态，这样在h这个纬度上求最长递增子序列
+   但对w排序时会有w相等的情况，对于w相等时 在按h的降序排 因为w相等就不能装了，所以通过h的降序做了 "截断" (这里需要理解一下)
+
+说明：虽然这样写会超时，但是我觉得已经可以了，用二分法优化的方法，学有余力再看吧～
+*/
+#include<iostream>
+#include<vector>
+using namespace std;
+
+//比较器
+bool compare(vector<int>nums0,vector<int>nums1)
+{
+    //w相等时按h降序排列
+    if(nums0[0]==nums1[0])
+      return nums0[1]>nums1[1];
+    return nums0[0]<nums1[0];
+}
+class Solution {
+public:
+    int maxEnvelopes(vector<vector<int>>& envelopes) {
+        //排序
+        sort(envelopes.begin(),envelopes.end(),compare);
+        vector<int>dp(envelopes.size(),1);
+        int res=1;
+        //求最长递增子序列
+        for(int i=1;i<envelopes.size();i++)
+        {
+            for(int j=0;j<i;j++)
+            {
+                if(envelopes[i][1]>envelopes[j][1]&&dp[j]+1>dp[i])
+                  dp[i] = dp[j]+1;
+            }
+            res = max(res,dp[i]);
+        }
+        return res;
+
+
+    }
+};
