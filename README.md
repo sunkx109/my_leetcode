@@ -5,4 +5,103 @@
 * **trick**
 
 1. 不要害怕写暴力解法，暴力解剪一剪枝也是可以过的
-2. 
+
+2. 方法广度要上去，并且写熟，因为这样才能得心应手
+
+
+
+### 题目列表
+
+#### 链表
+
+
+
+#### 二叉树
+
+
+
+#### 图
+
+* [课程表](https://leetcode-cn.com/problems/course-schedule/)
+* [判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/)
+
+#### 动态规划
+
+##### 一维dp
+
+- [打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+- [最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/) (阿里一面)
+- [最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+- [俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)
+
+##### 二维dp
+
+- [编辑距离](https://leetcode-cn.com/problems/edit-distance/)
+- [两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/)
+
+- [两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/)
+
+* [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/)
+
+* [最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+
+* [回文子串](https://leetcode-cn.com/problems/palindromic-substrings/)
+* [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+##### 背包问题
+
+* [分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/)
+
+* [零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
+
+#### 前缀和
+
+* [和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+
+#### 前缀树
+
+* [实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/)
+* [单词替换](https://leetcode-cn.com/problems/replace-words/)
+
+#### 单调栈
+
+* [每日温度](https://leetcode-cn.com/problems/daily-temperatures/)
+* [下一个更大元素 II](https://leetcode-cn.com/problems/next-greater-element-ii/)
+
+#### 滑动窗口
+
+* [最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)
+* [找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/)
+* [无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+* [考试的最大困扰度](https://leetcode-cn.com/problems/maximize-the-confusion-of-an-exam/)
+
+#### 差分数组
+
+* [航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/)
+* [拼车](https://leetcode-cn.com/problems/car-pooling/)
+
+#### LRU
+
+* [LRU 缓存](https://leetcode-cn.com/problems/lru-cache/)
+
+#### 堆
+
+* [数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)
+
+#### 排序
+
+* 
+
+#### 二分查找
+
+* 
+
+#### 暴力递归
+
+##### dfs
+
+* 
+
+##### 记忆化
+
+* 
