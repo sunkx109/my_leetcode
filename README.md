@@ -16,9 +16,16 @@
 
 
 
+
+
 #### 二叉树
 
-
+* [二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
+* [最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/)
+* [二叉搜索子树的最大键值和](https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree/)
+* [二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
+* [二叉树的最近公共祖先](https://leetcode.cn/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/)
+* [二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)
 
 #### 图
 
@@ -90,7 +97,10 @@
 
 #### 排序
 
-* 
+* 快排
+* [归排](https://leetcode.cn/submissions/detail/343672954/)
+* [堆排]()
+* [煎饼排序](https://leetcode-cn.com/problems/pancake-sorting/)
 
 #### 二分查找
 
@@ -100,7 +110,8 @@
 
 ##### dfs
 
-* 
+* [排列组合子集](https://github.com/sunkx109/my_leetcode/blob/main/%E6%9A%B4%E5%8A%9B%E9%80%92%E5%BD%92/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88%E5%AD%90%E9%9B%86%E5%88%86%E5%89%B2.md)
+* [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
 
 ##### 记忆化
 
