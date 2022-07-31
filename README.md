@@ -99,7 +99,7 @@
 
 * 快排
 * [归排](https://leetcode.cn/submissions/detail/343672954/)
-* [堆排]()
+* [堆排](https://github.com/sunkx109/my_leetcode/blob/main/%E5%A0%86/%E5%A0%86.md)
 * [煎饼排序](https://leetcode-cn.com/problems/pancake-sorting/)
 
 #### 二分查找
